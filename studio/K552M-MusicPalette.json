@@ -1,0 +1,28 @@
+﻿{
+    "colors":  [
+                   "FF1700",
+                   "FF5A00",
+                   "FFB000",
+                   "FFF000",
+                   "7E5E7F",
+                   "7ABB89"
+               ],
+    "enabled":  [
+                    true,
+                    true,
+                    true,
+                    true,
+                    false,
+                    false
+                ],
+    "mode":  1,
+    "speed":  5,
+    "brightness":  150,
+    "saturation":  200,
+    "smoothing":  0,
+    "red":  100,
+    "green":  58,
+    "blue":  100,
+    "gamma":  100,
+    "autoAttach":  false
+}

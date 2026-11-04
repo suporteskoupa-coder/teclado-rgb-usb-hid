@@ -1,0 +1,56 @@
+﻿K552-M DIRECT HID LAB 0.2.1
+
+O Transport Capture 2 confirmou o erro da versao anterior:
+
+ANTES DO SDK:
+  01 0E ...
+
+NO WRITER HID FINAL:
+  01 0F ...
+
+Por isso o Lab 0.1 estava enviando o comando errado diretamente ao teclado.
+
+A captura tambem mostrou:
+  01 01 00 00 00 01 ...
+aproximadamente uma vez por segundo. A versao 0.2 reproduz esse heartbeat.
+
+TESTE
+-----
+1. Feche COMPLETAMENTE o software oficial Redragon.
+2. Abra Abrir-DirectHID-0.2.cmd.
+3. Clique CONECTAR MI_02.
+4. Primeiro clique REPLAY FRAME REAL CAPTURADO.
+5. Veja se o LED muda.
+6. Depois teste Vermelho / Verde / Azul / Magenta.
+7. Por fim teste o gradiente.
+
+REPLAY FRAME REAL CAPTURADO
+---------------------------
+Esse botao nao gera um efeito nosso.
+Ele reproduz literalmente um frame 01 0F que apareceu na captura do software oficial.
+
+Isso permite separar:
+- problema de transporte/handshake;
+- problema na nossa geracao de frames.
+
+Se o replay funcionar, ja temos controle HID direto confirmado.
+
+Se o replay NAO funcionar:
+envie K552M-DirectHID-0.2.log. O proximo passo sera capturar exatamente a
+sequencia de abertura/handshake da MI_02 para descobrir se existe uma etapa de
+inicializacao antes dos frames 01 0F.
+
+SEGURANCA
+---------
+- Nao grava firmware.
+- Nao instala driver.
+- Nao altera a DLL.
+- Usa a interface vendor-specific MI_02.
+
+CORRECAO 0.2.1
+---------------
+O botao REPLAY FRAME REAL CAPTURADO falhava porque alguns pacotes copiados
+para o prototipo estavam sem 1 ou 2 bytes 00 de padding no final.
+
+A interface MI_02 usa reports fixos de 64 bytes. Agora o Lab completa
+automaticamente o padding final com 00, preservando o payload capturado.

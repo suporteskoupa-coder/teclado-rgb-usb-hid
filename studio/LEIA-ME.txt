@@ -1,0 +1,61 @@
+﻿K552-M STUDIO 0.4
+
+Base
+----
+Esta versao volta exclusivamente ao metodo que ja funcionou:
+o software oficial Redragon continua sendo o motor de audio e o K552-M Studio
+intercepta/recolore os frames em tempo real.
+
+Novidades da 0.4
+----------------
+- Interface maior e mais organizada.
+- 6 modos de efeito.
+- Velocidade.
+- Brilho.
+- Saturacao 0% a 200%.
+- Suavizacao 0% a 90%.
+- Calibracao individual R/G/B.
+- Gamma.
+- Presets.
+- Paleta aleatoria.
+- Inverter ordem da paleta.
+- Perfis salvos/carregados/excluidos.
+- Auto-ativar quando o processo Redragon for detectado.
+- Botao ABRIR REDRAGON com caminho salvo.
+- Stop seguro mantido.
+- Configuracao geral salva automaticamente.
+
+Como usar
+---------
+1. Abra o app oficial Redragon.
+2. Selecione Ritmo musical > Colorido.
+3. Execute Abrir-K552M-Studio.cmd.
+4. Ajuste paleta/efeito/calibracao.
+5. Clique ATIVAR.
+
+Auto-ativacao
+-------------
+Marque "Auto-ativar ao detectar o software Redragon".
+O Studio inicia o hook automaticamente quando encontrar o processo.
+
+Abrir Redragon
+--------------
+Na primeira vez, o botao pede o caminho de Redragon K552-M(PT).exe.
+Depois o caminho fica salvo em redragon-path.txt.
+
+Perfis
+------
+Perfis ficam na pasta Profiles como JSON.
+
+Arquivos de configuracao
+------------------------
+K552M-MusicPalette.json
+redragon-path.txt
+Profiles\*.json
+
+Seguranca
+---------
+- Nao grava firmware.
+- Nao instala driver.
+- Nao modifica a DLL em disco.
+- Usa o mesmo hook temporario que ja funcionou anteriormente.
